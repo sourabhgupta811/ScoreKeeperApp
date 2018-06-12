@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ScoreKeeperApp</string>
+    <string name="team_a_headline">Team A</string>
+    <string name="team_b_headline">Team B</string>
+    <string name="background_design">background design</string>
+    <string name="team_a_red_card_button">Team A Red Card Button</string>
+    <string name="team_a_yellow_card_button">Team A Yellow Card Button</string>
+    <string name="team_a_foul_button">Team A Foul Button</string>
+    <string name="team_a_goal_button">Team A Goal Button</string>
+    <string name="team_b_goal_button">Team B Goal Button</string>
+    <string name="team_b_yellow_card_button">Team B Yellow Card Button</string>
+    <string name="team_b_red_card_button">Team B Red Card Button</string>
+    <string name="team_b_foul_button">Team B Foul Button</string>
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/rightImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.6"
+            android:contentDescription="@string/background_design"
+            android:scaleType="fitXY"
+            android:scaleX="-1"
+            android:src="@drawable/arc_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/team_b_goal_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/team_b_goal_button"
+            android:scaleType="centerCrop"
+            android:src="@drawable/goal_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/team_b_yellow_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/team_b_yellow_card_button"
+            android:scaleType="centerInside"
+            android:src="@drawable/yellow_card"
+            app:layout_constraintCircle="@id/team_b_goal_button"
+            app:layout_constraintCircleAngle="315"
+            app:layout_constraintCircleRadius="75dp" />
+
+        <ImageButton
+            android:id="@+id/team_b_red_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/team_b_red_card_button"
+            android:scaleType="centerInside"
+            android:src="@drawable/red_card"
+            app:layout_constraintCircle="@id/team_b_goal_button"
+            app:layout_constraintCircleAngle="270"
+            app:layout_constraintCircleRadius="75dp" />
+
+        <ImageButton
+            android:id="@+id/team_b_foul_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/team_b_foul_button"
+            android:scaleType="centerInside"
+            android:src="@drawable/foul_icon"
+            app:layout_constraintCircle="@id/team_b_goal_button"
+            app:layout_constraintCircleAngle="0"
+            app:layout_constraintCircleRadius="75dp" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
