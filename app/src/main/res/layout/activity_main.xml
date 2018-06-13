@@ -68,7 +68,6 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/reset"
-            android:onClick="reset"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintBottom_toBottomOf="@+id/reset_button"
             app:layout_constraintEnd_toEndOf="@+id/reset_button"
