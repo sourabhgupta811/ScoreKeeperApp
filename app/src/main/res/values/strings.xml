@@ -11,4 +11,5 @@
     <string name="team_b_yellow_card_button">Team B Yellow Card Button</string>
     <string name="team_b_red_card_button">Team B Red Card Button</string>
     <string name="team_b_foul_button">Team B Foul Button</string>
+    <string name="app_company">SCOREBALL</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    >
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -9,13 +9,8 @@
 
         <ImageView
             android:id="@+id/rightImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.6"
-            android:contentDescription="@string/background_design"
-            android:scaleType="fitXY"
             android:scaleX="-1"
-            android:src="@drawable/arc_background"
+            style="@style/arc_background_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

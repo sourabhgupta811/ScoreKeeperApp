@@ -15,6 +15,39 @@
 
     <style name="fragmentTheme" parent="AppTheme">
         <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="arc_background_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:alpha">0.6</item>
+        <item name="android:contentDescription">@string/background_design</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@drawable/arc_background</item>
+    </style>
+    <style name="main_score_textview">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/goals_textview_height</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">48dp</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/goals_text_size</item>
+    </style>
+    <style name="foul_score_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginBottom">24dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

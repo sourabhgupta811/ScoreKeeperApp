@@ -3,26 +3,26 @@
     android:ordering="sequentially">
     <set android:ordering="together">
         <objectAnimator
-            android:duration="500"
+            android:duration="@integer/reset_animator_duration"
             android:propertyName="scaleX"
-            android:valueFrom="1"
-            android:valueTo="100" />
+            android:valueFrom="@integer/default_animation_scale"
+            android:valueTo="@integer/reset_animation_scale" />
         <objectAnimator
-            android:duration="500"
+            android:duration="@integer/reset_animator_duration"
             android:propertyName="scaleY"
-            android:valueFrom="1"
-            android:valueTo="100" />
+            android:valueFrom="@integer/default_animation_scale"
+            android:valueTo="@integer/reset_animation_scale" />
     </set>
     <set android:ordering="together">
         <objectAnimator
-            android:duration="500"
+            android:duration="@integer/reset_animator_duration"
             android:propertyName="scaleX"
-            android:valueFrom="100"
-            android:valueTo="1" />
+            android:valueFrom="@integer/reset_animation_scale"
+            android:valueTo="@integer/default_animation_scale" />
         <objectAnimator
-            android:duration="500"
+            android:duration="@integer/reset_animator_duration"
             android:propertyName="scaleY"
-            android:valueFrom="100"
-            android:valueTo="1" />
+            android:valueFrom="@integer/reset_animation_scale"
+            android:valueTo="@integer/default_animation_scale" />
     </set>
 </set>

@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.example.android.scorekeeperapp.R;
 import com.example.android.scorekeeperapp.animations.CustomAnimator;
 import com.example.android.scorekeeperapp.databinding.ScoreBoardLayoutBinding;
@@ -24,6 +23,14 @@ public class ScoreFragment extends Fragment {
     int teamBMainScoreNumber;
     int teamBYellowCardScoreNumber;
     int teamBFoulCardScoreNumber;
+    private static final String TEAM_A_RED_CARD_SCORE_KEY = "teamARedCardScoreNumber";
+    private static final String TEAM_A_YELLOW_CARD_SCORE_KEY = "teamAYellowCardScoreNumber";
+    private static final String TEAM_A_MAIN_CARD_SCORE_KEY = "teamAMainScoreNumber";
+    private static final String TEAM_A_FOUL_CARD_SCORE_KEY = "teamAFoulCardScoreNumber";
+    private static final String TEAM_B_RED_CARD_SCORE_KEY = "teamBRedCardScoreNumber";
+    private static final String TEAM_B_YELLOW_CARD_SCORE_KEY = "teamBYellowCardScoreNumber";
+    private static final String TEAM_B_MAIN_CARD_SCORE_KEY = "teamBMainScoreNumber";
+    private static final String TEAM_B_FOUL_CARD_SCORE_KEY = "teamBFoulCardScoreNumber";
 
     @Nullable
     @Override
@@ -32,6 +39,35 @@ public class ScoreFragment extends Fragment {
         animator = new CustomAnimator(getActivity());
         return scoreBoardLayoutBinding.getRoot();
 
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(TEAM_A_RED_CARD_SCORE_KEY,teamARedCardScoreNumber);
+        outState.putInt(TEAM_A_YELLOW_CARD_SCORE_KEY,teamAYellowCardScoreNumber);
+        outState.putInt(TEAM_A_MAIN_CARD_SCORE_KEY,teamAMainScoreNumber);
+        outState.putInt(TEAM_A_FOUL_CARD_SCORE_KEY,teamAFoulCardScoreNumber);
+        outState.putInt(TEAM_B_RED_CARD_SCORE_KEY,teamBRedCardScoreNumber);
+        outState.putInt(TEAM_B_YELLOW_CARD_SCORE_KEY,teamBYellowCardScoreNumber);
+        outState.putInt(TEAM_B_MAIN_CARD_SCORE_KEY,teamBMainScoreNumber);
+        outState.putInt(TEAM_B_FOUL_CARD_SCORE_KEY,teamBFoulCardScoreNumber);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if(savedInstanceState!=null){
+            teamARedCardScoreNumber = savedInstanceState.getInt(TEAM_A_RED_CARD_SCORE_KEY);
+            teamAFoulCardScoreNumber = savedInstanceState.getInt(TEAM_A_FOUL_CARD_SCORE_KEY);
+            teamAMainScoreNumber = savedInstanceState.getInt(TEAM_A_MAIN_CARD_SCORE_KEY);
+            teamAYellowCardScoreNumber = savedInstanceState.getInt(TEAM_A_YELLOW_CARD_SCORE_KEY);
+            teamBRedCardScoreNumber = savedInstanceState.getInt(TEAM_B_RED_CARD_SCORE_KEY);
+            teamBFoulCardScoreNumber = savedInstanceState.getInt(TEAM_B_FOUL_CARD_SCORE_KEY);
+            teamBMainScoreNumber = savedInstanceState.getInt(TEAM_B_MAIN_CARD_SCORE_KEY);
+            teamBYellowCardScoreNumber = savedInstanceState.getInt(TEAM_B_YELLOW_CARD_SCORE_KEY);
+            setState();
+        }
     }
 
     public void reset() {
@@ -43,15 +79,17 @@ public class ScoreFragment extends Fragment {
         teamBMainScoreNumber = 0;
         teamBYellowCardScoreNumber = 0;
         teamBFoulCardScoreNumber = 0;
-        scoreBoardLayoutBinding.teamARedCardScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamAScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamAYellowCardScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamAFoulScore.setText("Foul : " + String.valueOf(0));
-        scoreBoardLayoutBinding.teamBRedCardScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamBScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamBYellowCardScore.setText(String.valueOf(0));
-        scoreBoardLayoutBinding.teamBFoulScore.setText("Foul : " + String.valueOf(0));
-
+        setState();
+    }
+    public void setState() {
+        scoreBoardLayoutBinding.teamARedCardScore.setText(String.valueOf(teamARedCardScoreNumber));
+        scoreBoardLayoutBinding.teamAScore.setText(String.valueOf(teamAMainScoreNumber));
+        scoreBoardLayoutBinding.teamAYellowCardScore.setText(String.valueOf(teamAYellowCardScoreNumber));
+        scoreBoardLayoutBinding.teamAFoulScore.setText("Foul : " + String.valueOf(teamAFoulCardScoreNumber));
+        scoreBoardLayoutBinding.teamBRedCardScore.setText(String.valueOf(teamBRedCardScoreNumber));
+        scoreBoardLayoutBinding.teamBScore.setText(String.valueOf(teamBMainScoreNumber));
+        scoreBoardLayoutBinding.teamBYellowCardScore.setText(String.valueOf(teamBYellowCardScoreNumber));
+        scoreBoardLayoutBinding.teamBFoulScore.setText("Foul : " + String.valueOf(teamBFoulCardScoreNumber));
     }
 
     public void increaseTeamARedCardScore() {

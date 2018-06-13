@@ -6,4 +6,6 @@
     <color name="statusBarColor">#444444</color>
     <color name="black">#000000</color>
     <color name="selector_color">#99000000</color>
+    <color name="red">#ff0000</color>
+    <color name="yellow">#ffaa00</color>
 </resources>

@@ -24,32 +24,18 @@
 
                 <TextView
                     android:id="@+id/team_a_score"
-                    android:layout_width="@dimen/goals_textview_width"
-                    android:layout_height="@dimen/goals_textview_height"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="48dp"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center"
-                    android:textSize="@dimen/goals_text_size"
+                    style="@style/main_score_textview"
                     app:layout_constraintBottom_toTopOf="@+id/team_a_foul_score"
-                    app:layout_constraintEnd_toStartOf="@+id/team_b_score"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toEndOf="@+id/team_a_red_card_score"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/team_b_score"
-                    android:layout_width="@dimen/goals_textview_width"
-                    android:layout_height="@dimen/goals_textview_height"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginTop="48dp"
-                    android:fontFamily="sans-serif-thin"
-                    android:gravity="center"
-                    android:textSize="@dimen/goals_text_size"
+                    style="@style/main_score_textview"
                     app:layout_constraintBottom_toTopOf="@+id/team_b_foul_score"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/team_a_score"
+                    app:layout_constraintEnd_toStartOf="@+id/team_b_red_card_score"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -57,14 +43,10 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginEnd="24dp"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginRight="24dp"
-                    android:layout_marginStart="16dp"
-                    android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="#ff0000"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/team_b_score"
                     app:layout_constraintTop_toTopOf="@+id/team_b_score" />
 
                 <TextView
@@ -73,29 +55,17 @@
                     android:layout_height="40dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="24dp"
-                    android:layout_marginLeft="16dp"
                     android:layout_marginRight="24dp"
-                    android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="#ffaa00"
                     app:layout_constraintBottom_toBottomOf="@+id/team_b_score"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/team_b_score"
                     app:layout_constraintTop_toBottomOf="@+id/team_b_red_card_score" />
 
                 <TextView
                     android:id="@+id/team_b_foul_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#000000"
+                    style="@style/foul_score_text_view"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/guideline" />
@@ -104,14 +74,10 @@
                     android:id="@+id/team_a_red_card_score"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginStart="24dp"
-                    android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ff0000"
-                    app:layout_constraintEnd_toStartOf="@+id/team_a_score"
+                    android:textColor="@color/red"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/team_a_score" />
 
@@ -129,30 +95,18 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginEnd="16dp"
                     android:layout_marginLeft="24dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="20dp"
-                    android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ffaa00"
+                    android:textColor="@color/yellow"
                     app:layout_constraintBottom_toBottomOf="@+id/team_a_score"
-                    app:layout_constraintEnd_toStartOf="@+id/team_a_score"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/team_a_red_card_score" />
 
                 <TextView
                     android:id="@+id/team_a_foul_score"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginBottom="24dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#000000"
+                    style="@style/foul_score_text_view"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent" />

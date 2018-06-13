@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<set android:ordering="together" xmlns:android="http://schemas.android.com/apk/res/android">
-    <objectAnimator android:propertyName="scaleX" android:valueTo="-1" android:valueFrom="-1.2" android:duration="100" />
-    <objectAnimator android:propertyName="scaleY" android:valueTo="1" android:valueFrom="1.2" android:duration="100" />
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:ordering="together">
+    <objectAnimator
+        android:duration="@integer/scale_animator_duration"
+        android:propertyName="scaleX"
+        android:valueFrom="-1.2"
+        android:valueTo="-1" />
+    <objectAnimator
+        android:duration="@integer/scale_animator_duration"
+        android:propertyName="scaleY"
+        android:valueFrom="1.2"
+        android:valueTo="1" />
 </set>

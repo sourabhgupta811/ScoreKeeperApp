@@ -8,12 +8,7 @@
 
         <ImageView
             android:id="@+id/leftImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.6"
-            android:contentDescription="@string/background_design"
-            android:scaleType="fitXY"
-            android:src="@drawable/arc_background"
+            style="@style/arc_background_style"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +64,6 @@
             android:background="@android:color/transparent"
             android:clickable="true"
             android:contentDescription="@string/team_a_goal_button"
-            android:foreground="@drawable/button_selector"
             android:scaleType="centerCrop"
             android:src="@drawable/goal_image"
             app:layout_constraintBottom_toBottomOf="parent"

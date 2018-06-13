@@ -24,11 +24,12 @@
 
                 <TextView
                     android:id="@+id/team_a_score"
-                    android:layout_width="67dp"
-                    android:layout_height="90dp"
+                    android:layout_width="@dimen/goals_textview_width"
+                    android:layout_height="@dimen/goals_textview_height"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="48dp"
                     android:gravity="center"
+                    android:fontFamily="sans-serif-thin"
                     android:textSize="64sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/team_b_score"
@@ -38,11 +39,12 @@
 
                 <TextView
                     android:id="@+id/team_b_score"
-                    android:layout_width="67dp"
-                    android:layout_height="90dp"
+                    android:layout_width="@dimen/goals_textview_width"
+                    android:layout_height="@dimen/goals_textview_height"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="48dp"
                     android:gravity="center"
+                    android:fontFamily="sans-serif-thin"
                     android:textSize="64sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +60,7 @@
                     android:layout_marginStart="16dp"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ff0000"
+                    android:textColor="@color/red"
                     app:layout_constraintStart_toEndOf="@+id/team_b_score"
                     app:layout_constraintTop_toTopOf="@+id/team_b_score" />
 
@@ -72,7 +74,7 @@
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ffaa00"
+                    android:textColor="@color/yellow"
                     app:layout_constraintBottom_toBottomOf="@+id/team_b_score"
                     app:layout_constraintStart_toEndOf="@+id/team_b_score"
                     app:layout_constraintTop_toBottomOf="@+id/team_b_red_card_score" />
@@ -87,7 +89,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/team_b_yellow_card_score"
                     app:layout_constraintTop_toTopOf="@+id/team_b_yellow_card_score" />
@@ -100,7 +102,7 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ff0000"
+                    android:textColor="@color/red"
                     app:layout_constraintEnd_toStartOf="@+id/team_a_score"
                     app:layout_constraintTop_toTopOf="@+id/team_a_score" />
 
@@ -123,7 +125,7 @@
                     android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                    android:textColor="#ffaa00"
+                    android:textColor="@color/yellow"
                     app:layout_constraintBottom_toBottomOf="@+id/team_a_score"
                     app:layout_constraintEnd_toStartOf="@+id/team_a_score"
                     app:layout_constraintTop_toBottomOf="@+id/team_a_red_card_score" />
@@ -138,7 +140,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="#000000"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toStartOf="@+id/team_a_yellow_card_score"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/team_a_red_card_score" />

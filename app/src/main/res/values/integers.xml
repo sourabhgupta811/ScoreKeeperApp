@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="default_animation_scale">1</integer>
+    <integer name="scale_animator_duration">100</integer>
+    <integer name="reset_animator_duration">500</integer>
+    <integer name="reset_animation_scale">20</integer>
+
+</resources>

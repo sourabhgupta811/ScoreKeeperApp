@@ -2,9 +2,11 @@ package com.example.android.scorekeeperapp;
 
 import android.databinding.DataBindingUtil;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Explode;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -25,6 +27,11 @@ public class MainActivity extends AppCompatActivity implements TeamBFragment.Tea
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Explode explode = new Explode();
+            explode.setDuration(800);
+            getWindow().setEnterTransition(explode);
+        }
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mAnimator = new CustomAnimator(getApplicationContext());
         scoreFragment = (ScoreFragment) getSupportFragmentManager().findFragmentById(R.id.score_fragment);
@@ -35,24 +42,23 @@ public class MainActivity extends AppCompatActivity implements TeamBFragment.Tea
 
     private void setAnimation() {
         //reset button animations
-        RotateAnimation rotate = new RotateAnimation(0, 1800, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-        rotate.setDuration(20000);
+        RotateAnimation rotate = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotate.setDuration(4000);
         rotate.setRepeatCount(Animation.INFINITE);
         rotate.setInterpolator(new LinearInterpolator());
         activityMainBinding.resetButton.startAnimation(rotate);
-
     }
 
     public void reset(View v) {
-        activityMainBinding.resetTextView.setVisibility(View.INVISIBLE);
+        activityMainBinding.resetImageView.setVisibility(View.INVISIBLE);
         mAnimator.setResetAnimatorOnResetButton(v);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 scoreFragment.reset();
-                activityMainBinding.resetTextView.setVisibility(View.VISIBLE);
+                activityMainBinding.resetImageView.setVisibility(View.VISIBLE);
             }
-        }, 900);
+        }, 800);
 
     }
 
@@ -114,5 +120,10 @@ public class MainActivity extends AppCompatActivity implements TeamBFragment.Tea
     protected void onDestroy() {
         super.onDestroy();
         mMediaPlayer.release();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
