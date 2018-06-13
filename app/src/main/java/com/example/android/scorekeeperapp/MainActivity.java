@@ -47,11 +47,18 @@ public class MainActivity extends AppCompatActivity implements TeamBFragment.Tea
         rotate.setRepeatCount(Animation.INFINITE);
         rotate.setInterpolator(new LinearInterpolator());
         activityMainBinding.resetButton.startAnimation(rotate);
+        mAnimator.setButtonAnimationListener(activityMainBinding.resetImageView);
+        activityMainBinding.resetImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset(v);
+            }
+        });
     }
 
     public void reset(View v) {
         activityMainBinding.resetImageView.setVisibility(View.INVISIBLE);
-        mAnimator.setResetAnimatorOnResetButton(v);
+        mAnimator.setResetAnimatorOnResetButton(activityMainBinding.resetButton);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
